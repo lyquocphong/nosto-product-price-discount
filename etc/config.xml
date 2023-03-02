@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <nosto_product_price_discount>
+            <general>
+                <enable>1</enable>
+                <discount_percent>10</discount_percent>
+            </general>
+        </nosto_product_price_discount>
+    </default>
+</config>
