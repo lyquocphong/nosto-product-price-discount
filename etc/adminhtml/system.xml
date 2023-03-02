@@ -17,7 +17,7 @@
                 <field id="discount_percent" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
                     <label>Percentage</label>
                     <comment>Percentage will be used when user logged in</comment>
-                    <validate>required-entry validate-not-negative-number validate-digits-range digits-range-0-100</validate>
+                    <validate>required-entry validate-not-negative-number validate-digits-range digits-range-1-100</validate>
                 </field>
             </group>
         </section>
