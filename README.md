@@ -1,5 +1,6 @@
 # nosto-product-price-discount
-This module will set discount price for nosto product when customer logged in
+This is the magento 2 module will handle the price for nosto product. When this module is enabled, tt will calculate the
+price based on the percent which merchant set in the configuration.
 
 ## Authors
 - [Phong Ly](https://github.com/yquocphong)
