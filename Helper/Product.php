@@ -40,7 +40,7 @@ class Product
     {
         $isEnable = $this->configHelper->isModuleEnabled();
 
-        if (!$isEnable) {
+        if (!$isEnable || !$this->customerSession->isLoggedIn()) {
             return $originalPrice;
         }
 
