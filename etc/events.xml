@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="nosto_product_load_after">
+        <observer name="phongly_product_price_discount_nosto_product_load_after"
+                  instance="PhongLy\NostoProductPriceDiscount\Observer\NostoProductLoadAfter" />
+    </event>
+</config>
