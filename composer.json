@@ -1,5 +1,6 @@
 {
     "name": "phongly/module-nostoproductpricediscount",
+    "version": "0.0.1",
     "type": "magento2-module",
     "description": "",
     "license": "proprietary",
