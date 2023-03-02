@@ -1,0 +1,26 @@
+{
+    "name": "phongly/module-nostoproductpricediscount",
+    "version": "0.0.1",
+    "type": "magento2-module",
+    "description": "",
+    "license": "proprietary",
+    "authors": [
+        {
+            "email": "lyquocphong@gmail.com",
+            "name": "Phong Ly"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": "~7.4.0||~8.1.0",
+        "nosto/module-nostotagging": "^7.2"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "PhongLy\\NostoProductPriceDiscount\\": ""
+        }
+    }
+}

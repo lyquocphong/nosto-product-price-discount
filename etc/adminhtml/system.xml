@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="phongly" translate="label" sortOrder="10">
+            <label>Phong Ly Extenstion</label>
+        </tab>
+        <section id="nosto_product_price_discount" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Handle Nosto Product Price</label>
+            <tab>phongly</tab>
+            <resource>PhongLy_HandleNostoProduct::product_price_config</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>General Configuration</label>
+                <field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Module Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="discount_percent" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Percentage</label>
+                    <comment>Percentage will be used when user logged in</comment>
+                    <validate>required-entry validate-not-negative-number validate-digits-range digits-range-1-100</validate>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
