@@ -5,7 +5,8 @@ This module will set discount price for nosto product when customer logged in
 - [Phong Ly](https://github.com/yquocphong)
 
 ## Dependency
-- Nostotagging module (https://github.com/Nosto/nosto-magento2)
+- "php": "~7.4.0||~8.1.0",
+- "nosto/module-nostotagging": "^7.2"
 
 ## Installation
 Follow these steps:
