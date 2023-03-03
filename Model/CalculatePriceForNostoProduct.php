@@ -3,6 +3,7 @@
 namespace PhongLy\NostoProductPriceDiscount\Model;
 
 use Magento\Customer\Model\Session as CustomerSession;
+use Magento\Framework\Exception\RuntimeException;
 use PhongLy\NostoProductPriceDiscount\Helper\Config as ConfigHelper;
 use PhongLy\NostoProductPriceDiscount\Api\CalculatePriceForNostoProductInterface;
 
@@ -46,6 +47,10 @@ class CalculatePriceForNostoProduct implements CalculatePriceForNostoProductInte
         }
 
         $discountPercentage = $this->configHelper->getDiscountPercent();
+
+        if ($discountPercentage <= 0 || $discountPercentage > 100) {
+            throw new RuntimeException(__('Discount percent should be > 0 and < 100'));
+        }
 
         return ceil($originalPrice * ((100 - $discountPercentage) / 100));
     }
