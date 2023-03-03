@@ -1,6 +1,6 @@
 {
     "name": "phongly/module-nostoproductpricediscount",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "type": "magento2-module",
     "description": "This is magento 2 extension which will handle price for nosto product",
     "license": "proprietary",
