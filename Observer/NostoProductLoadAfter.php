@@ -6,21 +6,21 @@ use Magento\Catalog\Model\Product as MagentoProduct;
 use Magento\Framework\Event\Observer;
 use Magento\Framework\Event\ObserverInterface;
 use Nosto\Model\Product\Product as NostoProduct;
-use PhongLy\NostoProductPriceDiscount\Helper\Product as ProductHelper;
+use PhongLy\NostoProductPriceDiscount\Api\CalculatePriceForNostoProductInterface;
 
 class NostoProductLoadAfter implements ObserverInterface
 {
     /**
-     * @var ProductHelper
+     * @var CalculatePriceForNostoProductInterface
      */
-    protected $productHelper;
+    protected $calculatePriceForNostoProduct;
 
     /**
-     * @param ProductHelper $productHelper
+     * @param CalculatePriceForNostoProductInterface $calculatePriceForNostoProduct
      */
-    public function __construct(ProductHelper $productHelper)
+    public function __construct(CalculatePriceForNostoProductInterface $calculatePriceForNostoProduct)
     {
-        $this->productHelper = $productHelper;
+        $this->calculatePriceForNostoProduct = $calculatePriceForNostoProduct;
     }
 
     /**
@@ -37,8 +37,8 @@ class NostoProductLoadAfter implements ObserverInterface
         $magentoProduct = $observer->getData('magentoProduct');
         // Check that Magento product is set and get the custom prices from Magento product model
         if ($nostoProduct instanceof NostoProduct && $magentoProduct instanceof MagentoProduct) {
-            $newPrice = $this->productHelper->handlePriceForNostoProduct((float)$magentoProduct->getFinalPrice());
-            $newListPrice = $this->productHelper->handlePriceForNostoProduct((float)$magentoProduct->getPrice());
+            $newPrice = $this->calculatePriceForNostoProduct->execute((float)$magentoProduct->getFinalPrice());
+            $newListPrice = $this->calculatePriceForNostoProduct->execute((float)$magentoProduct->getPrice());
 
             $nostoProduct->setPrice($newPrice);
             $nostoProduct->setListPrice($newListPrice);
