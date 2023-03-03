@@ -8,6 +8,7 @@ price based on the percent which merchant set in the configuration.
 ## Dependency
 - "php": "~7.4.0||~8.1.0",
 - "nosto/module-nostotagging": "^7.2"
+- "phpunit/phpunit": "~9.5.18"
 
 ## Installation
 Follow these steps:

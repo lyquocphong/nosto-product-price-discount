@@ -12,7 +12,8 @@
     ],
     "require": {
         "php": "~7.4.0||~8.1.0",
-        "nosto/module-nostotagging": "^7.2"
+        "nosto/module-nostotagging": "^7.2",
+        "phpunit/phpunit": "~9.5.18"
     },
     "autoload": {
         "files": [
