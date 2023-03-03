@@ -1,11 +1,12 @@
 <?php
 
-namespace PhongLy\NostoProductPriceDiscount\Helper;
+namespace PhongLy\NostoProductPriceDiscount\Model;
 
 use Magento\Customer\Model\Session as CustomerSession;
 use PhongLy\NostoProductPriceDiscount\Helper\Config as ConfigHelper;
+use PhongLy\NostoProductPriceDiscount\Api\CalculatePriceForNostoProductInterface;
 
-class Product
+class CalculatePriceForNostoProduct implements CalculatePriceForNostoProductInterface
 {
     /**
      * @var CustomerSession
@@ -36,7 +37,7 @@ class Product
      *
      * @return float
      */
-    public function handlePriceForNostoProduct(float $originalPrice)
+    public function execute(float $originalPrice)
     {
         $isEnable = $this->configHelper->isModuleEnabled();
 
